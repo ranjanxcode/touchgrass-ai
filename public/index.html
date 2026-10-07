@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>TouchGrass AI</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ========================= -->
+    <!-- NAVBAR -->
+    <!-- ========================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🌿 TouchGrass
+        </div>
+
+        <div class="nav-right">
+
+            <span>
+                Open-Source AI
+            </span>
+
+            <span>
+                Hacktoberfest 2026
+            </span>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ========================= -->
+    <!-- HERO -->
+    <!-- ========================= -->
+
+    <header class="hero">
+
+        <div class="hero-badge">
+            🌱 AI-powered outdoor missions
+        </div>
+
+        <h1>
+            Stop scrolling.<br>
+            <span>Start exploring.</span>
+        </h1>
+
+        <p>
+            AI that gives you a reason to put your phone down
+            and step into the real world.
+        </p>
+
+        <div class="hero-stats">
+
+            <div>
+                <strong>🌱</strong>
+                <span>
+                    Get Outside
+                </span>
+            </div>
+
+            <div>
+                <strong>🤖</strong>
+                <span>
+                    AI Generated
+                </span>
+            </div>
+
+            <div>
+                <strong>🔒</strong>
+                <span>
+                    Runs Locally
+                </span>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- ========================= -->
+        <!-- MISSION GENERATOR -->
+        <!-- ========================= -->
+
+        <section class="mission-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Create your mission
+                    </h2>
+
+                    <p>
+                        Tell the AI what you're working with.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="mission-form">
+
+
+                <!-- TIME -->
+
+                <div class="form-group">
+
+                    <label for="time">
+                        ⏱️ How much time do you have?
+                    </label>
+
+                    <select id="time">
+
+                        <option value="15 minutes">
+                            15 minutes
+                        </option>
+
+                        <option value="30 minutes">
+                            30 minutes
+                        </option>
+
+                        <option value="1 hour">
+                            1 hour
+                        </option>
+
+                        <option value="2 hours">
+                            2+ hours
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- ACTIVITY -->
+
+                <div class="form-group">
+
+                    <label for="activity">
+                        🌳 What do you want to do?
+                    </label>
+
+                    <select id="activity">
+
+                        <option value="walking">
+                            Walking
+                        </option>
+
+                        <option value="running">
+                            Running
+                        </option>
+
+                        <option value="nature">
+                            Nature exploration
+                        </option>
+
+                        <option value="photography">
+                            Photography
+                        </option>
+
+                        <option value="gardening">
+                            Gardening
+                        </option>
+
+                        <option value="surprise">
+                            🎲 Surprise me
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- ENERGY -->
+
+                <div class="form-group">
+
+                    <label for="energy">
+                        ⚡ Energy Level
+                    </label>
+
+                    <select id="energy">
+
+                        <option value="Low">
+                            Low
+                        </option>
+
+                        <option value="Medium" selected>
+                            Medium
+                        </option>
+
+                        <option value="High">
+                            High
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- MOOD -->
+
+                <div class="form-group">
+
+                    <label for="mood">
+                        🧠 How are you feeling?
+                    </label>
+
+                    <select id="mood">
+
+                        <option value="Tired">
+                            Tired
+                        </option>
+
+                        <option value="Bored">
+                            Bored
+                        </option>
+
+                        <option value="Stressed">
+                            Stressed
+                        </option>
+
+                        <option value="Happy">
+                            Happy
+                        </option>
+
+                        <option value="Adventurous">
+                            Adventurous
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- COMPANY -->
+
+                <div class="form-group">
+
+                    <label for="company">
+                        👥 Who are you going with?
+                    </label>
+
+                    <select id="company">
+
+                        <option value="Alone">
+                            Alone
+                        </option>
+
+                        <option value="Friend">
+                            Friend
+                        </option>
+
+                        <option value="Friends">
+                            Friends
+                        </option>
+
+                        <option value="Family">
+                            Family
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- GENERATE BUTTON -->
+
+                <button
+                    type="button"
+                    id="generateBtn"
+                    class="generate-btn">
+
+                    🌱 Generate My Mission
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- AI MISSION -->
+        <!-- ========================= -->
+
+        <section
+            id="mission"
+            class="mission-card hidden">
+
+            <div class="mission-top">
+
+                <div>
+
+                    <span class="mission-label">
+                        🤖 AI GENERATED MISSION
+                    </span>
+
+                    <h2>
+                        Your Mission
+                    </h2>
+
+                </div>
+
+                <span class="difficulty">
+                    🌱 Easy
+                </span>
+
+            </div>
+
+
+            <div id="missionContent">
+
+                <h3>
+                    🌿 Your mission is ready
+                </h3>
+
+                <p>
+                    Generate a mission to get started.
+                </p>
+
+            </div>
+
+
+            <!-- PHONE WARNING -->
+
+            <div class="mission-warning">
+                📵 Put your phone away and enjoy the
+                sights around you.
+            </div>
+
+            <div class="mission-warning">
+                📵 Once you start, put your phone away.
+            </div>
+
+
+            <!-- START BUTTON -->
+
+            <button
+                type="button"
+                id="startBtn">
+
+                🚀 Start Mission
+
+            </button>
+
+        </section>
+
+
+        <!-- ========================= -->
+<!-- TOUCH GRASS MODE -->
+<!-- ========================= -->
+
+<section
+    id="grassMode"
+    class="grass-mode hidden">
+
+    <div class="grass-icon">
+        🌿
+    </div>
+
+    <p class="grass-label">
+        TOUCH GRASS MODE
+    </p>
+
+    <h2>
+        Your screen time ends here.
+    </h2>
+
+    <p>
+        Go outside. Explore.
+        Come back when you're done.
+    </p>
+
+
+    <!-- ========================= -->
+    <!-- ACTIVE MISSION -->
+    <!-- ========================= -->
+
+    <div
+        id="activeMission"
+        class="active-mission">
+
+        <span class="active-mission-label">
+            🌱 YOUR ACTIVE MISSION
+        </span>
+
+        <h3 id="activeMissionTitle">
+            Your mission will appear here.
+        </h3>
+
+        <p id="activeMissionDescription">
+            Go outside and complete your mission.
+        </p>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- PHONE MESSAGE -->
+    <!-- ========================= -->
+
+    <div class="grass-message">
+
+        📵 Phone down.<br>
+        🌳 Eyes up.<br>
+        ☀️ Enjoy the real world.
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- TIMER -->
+    <!-- ========================= -->
+
+    <div id="timer">
+        00:00
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- COMPLETE BUTTON -->
+    <!-- ========================= -->
+
+    <button
+        type="button"
+        id="completeBtn">
+
+        🌱 I Did It
+
+    </button>
+
+</section>
+
+        <!-- ========================= -->
+        <!-- GRASS SCORE -->
+        <!-- ========================= -->
+
+        <section class="score-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Your Grass Score
+                    </h2>
+
+                    <p>
+                        Every mission outside counts.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="score-grid">
+
+
+                <!-- MISSIONS -->
+
+                <div class="score-card">
+
+                    <span>
+                        🌱
+                    </span>
+
+                    <strong id="missionCount">
+                        0
+                    </strong>
+
+                    <p>
+                        Missions
+                    </p>
+
+                </div>
+
+
+                <!-- XP -->
+
+                <div class="score-card">
+
+                    <span>
+                        ⚡
+                    </span>
+
+                    <strong id="xp">
+                        0
+                    </strong>
+
+                    <p>
+                        Grass XP
+                    </p>
+
+                </div>
+
+
+                <!-- DAILY STREAK -->
+
+                <div class="score-card">
+
+                    <span>
+                        🔥
+                    </span>
+
+                    <strong id="streak">
+                        0
+                    </strong>
+
+                    <p>
+                        Day Streak
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- MISSION HISTORY -->
+        <!-- ========================= -->
+
+        <section class="history-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Mission History
+                    </h2>
+
+                    <p>
+                        Every adventure you've completed.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div id="historyList">
+
+                <p class="empty-history">
+                    🌱 No missions completed yet.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- HOW IT WORKS -->
+        <!-- ========================= -->
+
+        <section class="how-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        How it works
+                    </h2>
+
+                    <p>
+                        The shortest part of the
+                        experience is the screen.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="steps">
+
+
+                <div class="step">
+
+                    <span>
+                        01
+                    </span>
+
+                    <h3>
+                        Tell us
+                    </h3>
+
+                    <p>
+                        Choose your time, activity,
+                        energy, mood and company.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <span>
+                        02
+                    </span>
+
+                    <h3>
+                        Get a mission
+                    </h3>
+
+                    <p>
+                        Open-source AI creates something
+                        specifically for you.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <span>
+                        03
+                    </span>
+
+                    <h3>
+                        Go outside
+                    </h3>
+
+                    <p>
+                        Put your phone away
+                        and touch grass.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ========================= -->
+    <!-- FOOTER -->
+    <!-- ========================= -->
+
+    <footer>
+
+        <div>
+
+            <strong>
+                🌿 TouchGrass AI
+            </strong>
+
+            <p>
+                Built with AI for Hacktoberfest 2026.
+            </p>
+
+        </div>
+
+        <span>
+            Open • Local • Free
+        </span>
+
+    </footer>
+
+
+    <!-- ========================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ========================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
